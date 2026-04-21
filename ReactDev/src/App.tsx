@@ -2,6 +2,8 @@ import { useState } from "react"
 import CountDisplay from "./components/Countdisplay"
 import Dynamicstyle from "./components/Dynamicstyle"
 import Helloworld from "./components/Helloworld"
+import Debounce from "./components/Debounce"
+import Throttle from "./components/Throttle"
 
 export default function App() {
   const [count,setCount]=useState(0)
@@ -17,7 +19,8 @@ export default function App() {
       <Dynamicstyle value={count}/>
       <Dynamicstyle value="blue"/>
       <Dynamicstyle value="green"/>
-
+      <Debounce/>
+      <Throttle/>
     </>
   )
 }

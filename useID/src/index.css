@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-white text-gray-800 font-sans antialiased;
+  }
+}
+
+@layer components {
+
+  /* ─── BUTTONS ─── */
+  /* ✅ Define base styles once, extend with extra utilities */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    /* ✅ No @apply btn — just add the extra classes in HTML: class="btn btn-primary" */
+    @apply bg-blue-600 text-white hover:bg-blue-700 active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-800 hover:bg-gray-200 active:scale-95;
+  }
+  .btn-outline {
+    @apply border border-gray-300 text-gray-700 hover:bg-gray-50 active:scale-95;
+  }
+  .btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-600 active:scale-95;
+  }
+  .btn-sm { @apply px-3 py-1 text-xs; }
+  .btn-lg { @apply px-6 py-3 text-base; }
+
+  /* ─── INPUTS ─── */
+  .input {
+    @apply w-full px-3 py-2 text-sm border border-gray-300 rounded-lg outline-none bg-white transition-colors duration-150 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 disabled:bg-gray-100 disabled:cursor-not-allowed;
+  }
+  .input-error {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-100;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  .form-group {
+    @apply flex flex-col gap-1 mb-4;
+  }
+  .hint      { @apply text-xs text-gray-400 mt-1; }
+  .error-msg { @apply text-xs text-red-500 mt-1; }
+
+  /* ─── CARD ─── */
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm p-5;
+  }
+  .card-header {
+    @apply flex items-center justify-between mb-4 pb-3 border-b border-gray-100;
+  }
+  .card-title  { @apply text-base font-semibold text-gray-800; }
+  .card-footer {
+    @apply flex items-center justify-end gap-2 mt-4 pt-3 border-t border-gray-100;
+  }
+
+  /* ─── BADGES ─── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-blue   { @apply bg-blue-100 text-blue-700; }
+  .badge-green  { @apply bg-green-100 text-green-700; }
+  .badge-red    { @apply bg-red-100 text-red-700; }
+  .badge-yellow { @apply bg-yellow-100 text-yellow-700; }
+  .badge-gray   { @apply bg-gray-100 text-gray-600; }
+
+  /* ─── ALERTS ─── */
+  .alert {
+    @apply flex items-start gap-3 p-4 rounded-lg text-sm border;
+  }
+  .alert-info    { @apply bg-blue-50 text-blue-800 border-blue-200; }
+  .alert-success { @apply bg-green-50 text-green-800 border-green-200; }
+  .alert-warning { @apply bg-yellow-50 text-yellow-800 border-yellow-200; }
+  .alert-error   { @apply bg-red-50 text-red-800 border-red-200; }
+
+  /* ─── NAVBAR ─── */
+  .navbar {
+    @apply flex items-center justify-between px-6 py-3 bg-white border-b border-gray-200 shadow-sm;
+  }
+  .navbar-brand  { @apply text-lg font-bold text-gray-900; }
+  .navbar-links  { @apply flex items-center gap-6; }
+  .nav-link {
+    @apply text-sm text-gray-600 hover:text-blue-600 font-medium transition-colors duration-150;
+  }
+  .nav-link-active { @apply text-blue-600; }
+
+  /* ─── LAYOUT ─── */
+  .container-sm  { @apply max-w-2xl mx-auto px-4; }
+  .container-md  { @apply max-w-4xl mx-auto px-4; }
+  .container-lg  { @apply max-w-6xl mx-auto px-4; }
+  .section       { @apply py-12; }
+  .page-title    { @apply text-3xl font-bold text-gray-900 mb-2; }
+  .page-subtitle { @apply text-base text-gray-500 mb-8; }
+  .divider       { @apply w-full h-px bg-gray-200 my-6; }
+  .stack         { @apply flex flex-col gap-4; }
+  .row           { @apply flex flex-row items-center gap-4; }
+}

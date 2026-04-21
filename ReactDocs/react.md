@@ -1,0 +1,1 @@
+jsx->React.createElement->object (represtation of vdom)

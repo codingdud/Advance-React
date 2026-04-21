@@ -1,0 +1,1 @@
+useImperativeHandle is a React Hook that lets you customize the handle exposed as a ref.

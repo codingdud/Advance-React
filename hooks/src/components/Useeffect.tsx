@@ -1,23 +1,23 @@
-import { useEffect } from "react"
-import  chat from '../utils/chat'
+import { useEffect, useState } from "react";
+import chat from "../utils/chat";
 
 export default function Useeffect() {
-    useEffect(()=>{
-        const session=chat("server",123)
-        session.connected();
-        return ()=>{
-            session.disconnected()
-        }
-    },[])
+  const [option,setOption]=useState("unknow")
+  useEffect(() => {
+    const session = chat("server", option);
+    session.connected();
+    return () => {
+      session.disconnected();
+    };
+  }, [option]);
   return (
     <div>
-
-        <select >
-            <option value="general"> general </option>
-            <option value="travel"> travel </option>
-            <option value="music"> music </option>
-            <option value="log"> log </option>
-        </select>
+      <select value={option} onChange={(e)=>setOption(e.target.value)}>
+        <option value="general"> general </option>
+        <option value="travel"> travel </option>
+        <option value="music"> music </option>
+        <option value="log"> log </option>
+      </select>
     </div>
-  )
+  );
 }
